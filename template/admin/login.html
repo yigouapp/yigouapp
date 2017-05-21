@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{CSS_PATH}login-admin.css">
+</head>
+<body>
+    <form action="index.php?d=admin&f=admin&a=loginCheck" method="post" class="form">
+        <label>
+            <h3>后台管理入口</h3>
+        </label>
+        <label>
+            账&nbsp;&nbsp;&nbsp;号：<input type="text" name="username" required id="user">
+        </label>
+        <label>
+            密&nbsp;&nbsp;&nbsp;码：<input type="password" name="pass" required id="pass">
+        </label>
+        <label class="yzm">
+            验证码：<input type="text" name="verify" required id="verify">
+            <img src="{HTTP_PATH}yzm/img.php" alt="" onclick="this.src='{HTTP_PATH}yzm/img.php?aa='+Math.random()">
+        </label>
+        <label class="choose">
+            <input type="submit" value="登录">
+        </label>
+    </form>
+</body>
+</html>

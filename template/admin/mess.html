@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    html,body{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    #box{
+        width: 500px;
+        height: 250px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top:0;
+        margin: auto;
+        border: 1px solid pink;
+        box-shadow: 0 0 4px pink;
+        /*background-image: url("../static/img/bg.png");*/
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    h1{
+        text-align: center;
+        margin: 30px 0;
+        font-weight: 500;
+    }
+    p{
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+    p span,p a{
+        color: red;
+    }
+</style>
+<body>
+    <div id="box">
+        <h1>提示信息</h1>
+        <p>{$mess}</p>
+        <p>如果 <span>3</span>秒后没跳转，请<a href="{$src}">点击跳转</a></p>
+    </div>
+</body>
+</html>
+<script>
+    let span=document.querySelector('span');
+    let a=document.querySelector('a');
+    let src=a.href;
+    let i=3;
+    let t=setInterval(function () {
+        i--;
+        if (i===0){
+            location.href=src;
+            clearInterval(t);
+        }
+        span.innerHTML=i;
+    },1000)
+</script>
